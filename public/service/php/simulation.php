@@ -26,7 +26,7 @@
 
 <?php
 //include __DIR__ . "/../connector/connection.php";
-include __DIR__ . "connection.php";
+include __DIR__ . "../service/php/connection.php";
 
 // Connect to PostgreSQL
 $conn = pg_connect("host=$host dbname=$dbname user=$user password=$password");
@@ -34,8 +34,6 @@ $conn = pg_connect("host=$host dbname=$dbname user=$user password=$password");
 if (!$conn) {
     die("Database connection failed: " . pg_last_error());
 }
-
-$page1 = '/../service/index.html';
 
 // Get POST data
 $country = $_POST['country'];
@@ -54,11 +52,10 @@ $result = pg_query_params($conn, $query, array($country, $production, $hours; $g
 
 if ($result) {
     echo "✅ Simulation submitted.<br><br>";
-    //echo '<a href="cyl_add.html">Add Another LPG Cylinder</a><br>';
-    //echo '<a href="cyl_list.php">View All LPG Cylinders</a>';
+
     die() ;
 } else {
-    //header('Location: '.$page1) ;
+ 
     echo "❌ Error: " . pg_last_error($conn);
    die() ;
     
