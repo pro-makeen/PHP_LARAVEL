@@ -14,7 +14,7 @@
 
 <?php
 //include __DIR__ . "/../connector/connection.php";
-include __DIR__ . "/../connector/connection.php";
+include __DIR__ . "connector.php";
 
 // Connect to PostgreSQL
 $conn = pg_connect("host=$host dbname=$dbname user=$user password=$password");
