@@ -18,8 +18,7 @@ class dbSchemaPg
     {
         try {
 	    $this->dbh = new PDO("pgsql:host={$this->host};port={$this->port};dbname={$this->db_name};user={$this->username};password={$this->password}");
-	    $this->dbh->exec("set names utf8");
-        }
+	            }
         catch (PDOException $e) {
             echo $e->getMessage();
         }
