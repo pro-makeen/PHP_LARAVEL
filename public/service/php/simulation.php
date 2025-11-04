@@ -22,7 +22,7 @@ if (!$conn) {
     die("Database connection failed: " . pg_last_error());
 }
 
-$page1 = '../service/index.html';
+$page1 = '/../service/index.html';
 
 // Get POST data
 $country = $_POST['country'];
@@ -45,8 +45,8 @@ if ($result) {
     //echo '<a href="cyl_list.php">View All LPG Cylinders</a>';
     die() ;
 } else {
-    header('Location: '.$page1) ;
-    //echo "❌ Error: " . pg_last_error($conn);
+    //header('Location: '.$page1) ;
+    echo "❌ Error: " . pg_last_error($conn);
    die() ;
     
 }
