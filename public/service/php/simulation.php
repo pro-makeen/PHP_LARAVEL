@@ -13,6 +13,7 @@
 </html>
 
 <?php
+//include __DIR__ . "/../connector/connection.php";
 include __DIR__ . "/../connector/connection.php";
 
 // Connect to PostgreSQL
