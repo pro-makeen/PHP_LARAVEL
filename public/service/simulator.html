@@ -22,7 +22,7 @@
     <img src="/customer/logos/makeen_logo.png" alt="MAKEEN ENERGY LOGO"
     width="350" 
     height="100"> 
-    <h1>New LPG Cylinder</h1>
+    <h1>New simulation</h1>
     <div id="qr-reader"></div>
     <div id="qr-reader-results"></div>
     <script src="../scripts/html5-qrcode.js"></script>
@@ -38,7 +38,7 @@
         <label for="production">Production per day:</label><br>
         <input type="number" name="year" required><br><br>
 
-        <label for="gas_cylidner">GAs per cylinder (Kg):</label><br>
+        <label for="gas_cylidner">Gas per cylinder (Kg):</label><br>
         <input type="number" name="valve" required><br><br>
 
         <label for="hours">Hours per day:</label><br>
@@ -47,7 +47,7 @@
         <label for="man_power">Price man power (USD):</label><br>
         <input type="number" name="net" required><br><br>
 
-        <label for="service_team">Service team (number of persons)Profit per tonne:</label><br>
+        <label for="service_team">Service team (number of persons):</label><br>
         <input type="number" name="valve" required><br><br>
 
         <label for="price_gas">Gas price per tonne (USD):</label><br>
@@ -62,18 +62,10 @@
         <label for="device">Device:</label><br>
         <input type="text" name="device" required><br><br>
    
-        <input type="submit" value="Add Cylinder">
+        <input type="submit" value="Simulation">
     
     </form>
      
-    <script>
-    function updateLastElement(){
-    let text = document.getElementById("tag_txt_value").value.trim();
-    let parts = text.split("?id=");
-    let last = parts.length > 0 ? parts[parts.length - 1 ] : "not found";
-    document.getElementById("serial_qr_code").value = last;
-    }
-    </script>
-
+    
 </body>
 </html>
