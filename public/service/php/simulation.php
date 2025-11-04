@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>LPG Cylinder Basic Data</title>
+    <title>Simulation Basic Data</title>
 </head>
 <body>
      <img src="../service/logos/makeen_logo.png" alt="MAKEEN ENERGY LOGO"
