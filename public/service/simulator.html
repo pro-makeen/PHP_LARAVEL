@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Simulator</title>
+    <title>MAKEEN Energy - Simulator</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
         #qr-reader {
@@ -23,11 +23,7 @@
     width="350" 
     height="100"> 
     <h1>New simulation</h1>
-    <div id="qr-reader"></div>
-    <div id="qr-reader-results"></div>
-    <script src="../scripts/html5-qrcode.js"></script>
-    <script src="../scripts/script.js"></script>
-  
+ 
     <p></p>
     
     <form action="../service/php/simulation.php" method="POST">
@@ -38,7 +34,7 @@
         <label for="production">Production per day:</label><br>
         <input type="number" name="year" required><br><br>
 
-        <label for="gas_cylidner">Gas per cylinder (Kg):</label><br>
+        <label for="gas_cylinder">Gas per cylinder (Kg):</label><br>
         <input type="number" name="valve" required><br><br>
 
         <label for="hours">Hours per day:</label><br>
