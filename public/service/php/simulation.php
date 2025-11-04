@@ -23,7 +23,6 @@
 
 <h1>MAKEEN Energy Results</h1>
 
-
 <?php
 
 include __DIR__ . "../service/php/connection.php";
