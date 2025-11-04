@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Simulator</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        #qr-reader {
+            width: 100%;
+            max-width: 600px;
+            margin: auto;
+        }
+        @media (max-width: 600px) {
+            #qr-reader {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+  
+<body>
+    <img src="/customer/logos/makeen_logo.png" alt="MAKEEN ENERGY LOGO"
+    width="350" 
+    height="100"> 
+    <h1>New LPG Cylinder</h1>
+    <div id="qr-reader"></div>
+    <div id="qr-reader-results"></div>
+    <script src="../scripts/html5-qrcode.js"></script>
+    <script src="../scripts/script.js"></script>
+  
+    <p></p>
+    
+    <form action="submit.php" method="POST">
+        
+        <label for="country">Country:</label><br>
+        <input type="text" name="brand" required><br><br>
+
+        <label for="production">Production per day:</label><br>
+        <input type="number" name="year" required><br><br>
+
+        <label for="gas_cylidner">GAs per cylinder (Kg):</label><br>
+        <input type="number" name="valve" required><br><br>
+
+        <label for="hours">Hours per day:</label><br>
+        <input type="number" name="tare" required><br><br>
+
+        <label for="man_power">Price man power (USD):</label><br>
+        <input type="number" name="net" required><br><br>
+
+        <label for="service_team">Service team (number of persons)Profit per tonne:</label><br>
+        <input type="number" name="valve" required><br><br>
+
+        <label for="price_gas">Gas price per tonne (USD):</label><br>
+        <input type="number" name="gas" required><br><br>
+
+        <label for="profit_gas">Profit per tonne (USD):</label><br>
+        <input type="number" name="valve" required><br><br>
+
+        <label for="owner">Owner:</label><br>
+        <input type="number" name="owner" required><br><br>
+
+        <label for="device">Device:</label><br>
+        <input type="text" name="device" required><br><br>
+   
+        <input type="submit" value="Add Cylinder">
+    
+    </form>
+     
+    <script>
+    function updateLastElement(){
+    let text = document.getElementById("tag_txt_value").value.trim();
+    let parts = text.split("?id=");
+    let last = parts.length > 0 ? parts[parts.length - 1 ] : "not found";
+    document.getElementById("serial_qr_code").value = last;
+    }
+    </script>
+
+</body>
+</html>
