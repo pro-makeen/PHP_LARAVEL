@@ -23,8 +23,6 @@ echo 'Connection attempt failed.';
 
 }
 
-
-
 // Get POST data
 $country = $_POST['country'];
 $production = $_POST['production'];
