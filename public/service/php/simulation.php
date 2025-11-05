@@ -35,10 +35,15 @@ $profit_gas = $_POST['profit_gas'];
 $device = $_POST['device'];
 
 // Insert data securely
-$query = "INSERT INTO simulation_data (country, production, hours, gas_cylidner, man_power, service_team, price_gas, profit_gas, device) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9)";
-$result = pg_query_params($db_handle, $query, array($country, $production, $hours; $gas_cylidner; $man_power, $service_team, $price_gas, $profit_gas, $device));
+//$query = "INSERT INTO simulation_data (country, production, hours, gas_cylidner, man_power, service_team, price_gas, profit_gas, device) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9)";
+//$result = pg_query_params($db_handle, $query, array($country, $production, $hours; $gas_cylidner; $man_power, $service_team, $price_gas, $profit_gas, $device));
 
-if ($result) {
+$insertion = DB::selectOne("INSERT INTO simulation_data (country, production, hours, gas_cylidner, man_power, service_team, price_gas, profit_gas, device) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING uuid", [$country, $production, $hours; $gas_cylidner; $man_power, $service_team, $price_gas, $profit_gas, $device]);
+
+echo $insertion->uuid;
+
+
+if ($insertion) {
     echo '✅ Simulation submitted.';
 
     die() ;
