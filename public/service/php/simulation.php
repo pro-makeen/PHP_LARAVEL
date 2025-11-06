@@ -21,6 +21,7 @@ $service_team = $_POST['service_team'];
 $price_gas = $_POST['price_gas'];
 $profit_gas = $_POST['profit_gas'];
 $device = $_POST['device'];
+
 namespace App\Http\Controllers;
  
 use Illuminate\Support\Facades\DB;

@@ -65,7 +65,7 @@ return [
 
         'pgsql' => [
             'driver' => 'pgsql',
-            'url' => env('DATABASE_URL'),
+            'url' => env('postgresql://root:ybIeaygTzEWTg0AJnZ3T1yYZeTGtODUK@dpg-d3ua6jjipnbc738q7g5g-a.frankfurt-postgres.render.com/me_users'),
             'host' => env('DB_HOST', 'dpg-d3ua6jjipnbc738q7g5g-a.frankfurt-postgres.render.com'),
             'port' => env('DB_PORT', '5432'),
             'database' => env('DB_DATABASE', 'me_users'),
