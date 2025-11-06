@@ -10,7 +10,6 @@
 </html>
 
 <?php
-
 // Get POST data
 $country = $_POST['country'];
 $production = $_POST['production'];
@@ -22,8 +21,6 @@ $price_gas = $_POST['price_gas'];
 $profit_gas = $_POST['profit_gas'];
 $device = $_POST['device'];
 
-namespace App\Http\Controllers;
- 
 use Illuminate\Support\Facades\DB;
  
 DB::insert('insert into me_users (country, production, hours, gas_cylidner, man_power, service_team, price_gas, profit_gas, device) values (?, ?, ?, ?, ?, ?, ?, ?, ?)', [$country, $production, $hours; $gas_cylidner; $man_power, $service_team, $price_gas, $profit_gas, $device]);
