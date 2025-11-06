@@ -1,15 +1,29 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>MAKEEN Energy</title>
+    <title>LPG Cylinder Basic Data</title>
 </head>
 <body>
+     <img src="../logos/makeen_logo.png" alt="MAKEEN ENERGY LOGO"
+    width="350" 
+    height="100"> 
     <p></p>
     <p></p>
     </body>
 </html>
 
 <?php
+include __DIR__ . "/../php/connection.php";
+
+// Connect to PostgreSQL
+$conn = pg_connect("host=$host dbname=$dbname user=$user password=$password");
+
+if (!$conn) {
+    die("Database connection failed: " . pg_last_error());
+}
+
+$page1 = '../service/index.html';
+
 // Get POST data
 $country = $_POST['country'];
 $production = $_POST['production'];
@@ -21,8 +35,18 @@ $price_gas = $_POST['price_gas'];
 $profit_gas = $_POST['profit_gas'];
 $device = $_POST['device'];
 
-use Illuminate\Support\Facades\DB;
- 
-DB::insert('insert into me_users (country, production, hours, gas_cylidner, man_power, service_team, price_gas, profit_gas, device) values (?, ?, ?, ?, ?, ?, ?, ?, ?)', [$country, $production, $hours; $gas_cylidner; $man_power, $service_team, $price_gas, $profit_gas, $device]);
+// Insert data securely
+$query = "INSERT INTO simulation_data (country, production, hours, gas_cylidner, man_power, service_team, price_gas, profit_gas, device) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9)";
+$result = pg_query_params($conn, $query, array($country, $production, $hours; $gas_cylidner; $man_power, $service_team, $price_gas, $profit_gas, $device));
 
+if ($result) {
+    echo "✅ Simulation submitted.";
+   
+    die() ;
+} else {
+   echo "❌ Error: " . pg_last_error($conn);
+   die() ;
+    
+}
+pg_close($conn);
 ?>
