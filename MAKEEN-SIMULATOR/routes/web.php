@@ -11,11 +11,11 @@ Route::get('/', function () {
 })->name('home');
 
 
- Route::get('/', function () {
+ //Route::get('/', function () {
 
-   return view('test', ['users' => App\User::all()]);
+   //return view('test', ['users' => App\User::all()]);
    
-});
+//});
 
 
 Route::middleware(['auth', 'verified'])->group(function () {
