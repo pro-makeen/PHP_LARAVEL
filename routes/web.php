@@ -1,20 +1,20 @@
 <?php
 
+use App\Http\Controllers\ProfileController;
+use Illuminate\Support\Facades\Route;
 
-use App\Http\Controllers\Auth\Login;
-use App\Http\Controllers\Auth\Logout;
+Route::get('/', function () {
+    return view('welcome');
+});
 
-// Login routes
-Route::view('/login', 'auth.login')
-    ->middleware('guest')
-    ->name('login');
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth', 'verified'])->name('dashboard');
 
-Route::post('/login', Login::class)
-    ->middleware('guest');
+Route::middleware('auth')->group(function () {
+    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+});
 
-// Logout route
-Route::post('/logout', Logout::class)
-    ->middleware('auth')
-    ->name('logout');
-
-?>
+require __DIR__.'/auth.php';
